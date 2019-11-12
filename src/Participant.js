@@ -1,7 +1,4 @@
 import React from 'react';
-import { stat } from 'fs';
-
-
 
 export default function participants(props) {
   
