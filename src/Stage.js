@@ -3,19 +3,18 @@ import Participant from './Participant.js'
 import ParticipantList from './ParticipantList.js'
 
 export default function stage(props){
-  let array = props.participantList.filter(prop => prop.onStage === true)
-    console.log(array);
-  let stageHtml = ""
-  array.forEach(element => {
-      
-  });
+  let onStageParticipants = props.participantList.filter(prop => prop.onStage === true)
+
   return (
     <div className='view'>
-       <div className='user'>
-        <h3 className='name'> </h3>
-        <div className='avatar'> </div>
-      </div>
+      {onStageParticipants.map(function(participant) {
+        return (
+        <div className='user'>
+        <h3 className='name'>{participant.name}</h3>
+        <img className='avatar' src={participant.avatar} alt="avatar"/> 
+        </div>
+        )      
+    })}
     </div>
   )
-
 }
