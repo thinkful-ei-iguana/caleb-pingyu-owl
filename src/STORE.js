@@ -1,3 +1,5 @@
+import stage from "./Stage";
+
 const participants = [
   {
       id: 1,
@@ -40,6 +42,69 @@ const participants = [
   }
 ];
 
+const chatEvents = [
+    {
+        participantId: 3,
+        type: 'message',
+        message: 'Hello world',
+        time: 1548852646559,
+        timestamp: 1548852484247
+    },
+    {
+        participantId: 2,
+        type: 'thumbs-up',
+        timestamp: 1548852484247
+    },
+    {
+        participantId: 4,
+        type: 'thumbs-down',
+        timestamp: 1548852484247
+    },
+    {
+        participantId: 1,
+        type: 'raise-hand',
+        timestamp: 1548852544247
+    },
+    {
+        participantId: 1,
+        type: 'clap',
+        timestamp: 1548852544247
+    },
+    {
+        participantId: 1,
+        type: 'join',
+        timestamp: 1548852544247
+    },
+    {
+        participantId: 5,
+        type: 'leave',
+        timestamp: 1548852604247
+    },
+    {
+        participantId: 3,
+        type: 'join-stage',
+        timestamp: 1548852664247
+    },
+    {
+        participantId: 3,
+        type: 'leave-stage',
+        timestamp: 1548852724247
+    }
+];
+
+const convertEventTypeToText = {
+    'thumbs-up': 'gave a thumbs up',
+    'thumbs-down': 'gave a thumbs down',
+    'raise-hand': 'raised their hand',
+    'clap': 'clapped',
+    'join': 'joined',
+    'leave': 'left',
+    'join-stage': 'joined the stage',
+    'leave-stage': 'left the stage'
+};
+
 export default {
   participants,
+  chatEvents,
+  convertEventTypeToText
 }
